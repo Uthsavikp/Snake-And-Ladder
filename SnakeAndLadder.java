@@ -48,6 +48,7 @@ public class SnakeAndLadder {
                     break;
             }
         }
+        System.out.println("Winning Position Is : " + position);
     }
 }
 
