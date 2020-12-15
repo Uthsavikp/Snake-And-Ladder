@@ -5,6 +5,7 @@ public class SnakeAndLadder {
     //variables
     int position = 0;
     int positionCheck = 0;
+    int noOfDieRolls = 0;
 
     public static void main(String[] args) {
         System.out.println("Welcome To Snake And Ladder Game");
@@ -24,6 +25,7 @@ public class SnakeAndLadder {
         while (position < WIN_POSITION) {
             Random random = new Random();
             int dice = rollDice();
+            noOfDieRolls++;
             int option = random.nextInt(3);
             System.out.println("Player Option Is : " + option);
             switch (option) {
@@ -48,7 +50,12 @@ public class SnakeAndLadder {
                     break;
             }
         }
+        System.out.println("_________________________");
         System.out.println("Winning Position Is : " + position);
+        System.out.println("_____________________________________________________________");
+        System.out.println("Number Of Times The Dice Was Played To Win The Game Is : " + noOfDieRolls);
+        System.out.println("_____________________________________________________________");
+
     }
 }
 
