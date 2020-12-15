@@ -10,7 +10,7 @@ public class SnakeAndLadder {
         System.out.println("Welcome To Snake And Ladder Game");
         SnakeAndLadder snakeLadder = new SnakeAndLadder();
         snakeLadder.playerOption();
-        snakeLadder.winningPosition();
+        // snakeLadder.winningPosition();
     }
 
     public int rollDice() {
@@ -21,33 +21,39 @@ public class SnakeAndLadder {
     }
 
     public void playerOption() {
-        Random random = new Random();
-        int dice = rollDice();
-        int option = random.nextInt(3);
-        System.out.println("Player Option Is : " + option);
-        switch (option) {
-
-            case 1:
-                System.out.println("Ladder");
-                position += dice;
-                break;
-            case 2:
-                System.out.println("Snake");
-                position -= dice;
-                break;
-            default:
-                System.out.println("No Play");
-                break;
-        }
-    }
-
-    public void winningPosition() {
         while (position < WIN_POSITION) {
-            winTime += position;
-            position++;
+            Random random = new Random();
+            int dice = rollDice();
+            int option = random.nextInt(3);
+            System.out.println("Player Option Is : " + option);
+            switch (option) {
+
+                case 1:
+                    System.out.println("Ladder");
+                    if ((position + dice) > WIN_POSITION) {
+                        position = WIN_POSITION;
+                    } else {
+                        position += dice;
+                    }
+                    break;
+                case 2:
+                    System.out.println("Snake");
+                    if ((position - dice) < position) {
+                        position = position;
+                    } else {
+                        position -= dice;
+                    }
+                    break;
+                default:
+                    System.out.println("No Play");
+                    break;
+            }
+            System.out.println("Winning Position Of Player : " + position);
         }
-        System.out.println("Winning Position :" + position);
     }
 }
+
+
+
 
 
