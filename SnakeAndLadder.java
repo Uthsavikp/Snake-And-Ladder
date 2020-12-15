@@ -4,13 +4,11 @@ public class SnakeAndLadder {
     final static int WIN_POSITION = 100;
     //variables
     int position = 0;
-    int winTime = 0;
 
     public static void main(String[] args) {
         System.out.println("Welcome To Snake And Ladder Game");
         SnakeAndLadder snakeLadder = new SnakeAndLadder();
         snakeLadder.playerOption();
-        // snakeLadder.winningPosition();
     }
 
     public int rollDice() {
@@ -25,27 +23,24 @@ public class SnakeAndLadder {
             Random random = new Random();
             int dice = rollDice();
             int option = random.nextInt(3);
-            System.out.println("Player Option Is : " + option);
+            System.out.println("Player Option : " + option);
             switch (option) {
 
                 case 1:
-                    System.out.println("Ladder");
-                        position += dice;
-
+                    position += dice;
+                    System.out.println("Snake Is At : " + position);
                     break;
                 case 2:
-                    System.out.println("Snake");
+                    position -= dice;
                     if ((position - dice) < position) {
                         position = position;
-                    } else {
-                        position -= dice;
                     }
+                    System.out.println("Ladder Is At : " + position);
                     break;
                 default:
-                    System.out.println("No Play");
+                    System.out.println("No Play : " + position);
                     break;
             }
-            System.out.println("Winning Position Of Player : " + position);
         }
     }
 }
