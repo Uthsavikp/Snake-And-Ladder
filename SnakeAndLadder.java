@@ -29,7 +29,11 @@ public class SnakeAndLadder {
             switch (option) {
 
                 case 1:
-                    position += dice;
+                    if ((position + dice) > WIN_POSITION) {
+                        position = WIN_POSITION;
+                    } else {
+                        position += dice;
+                    }
                     System.out.println("Ladder Is At : " + position);
                     break;
                 case 2:
