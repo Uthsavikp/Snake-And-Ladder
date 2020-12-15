@@ -28,14 +28,14 @@ public class SnakeAndLadder {
 
                 case 1:
                     position += dice;
-                    System.out.println("Snake Is At : " + position);
+                    System.out.println("Ladder Is At : " + position);
                     break;
                 case 2:
                     position -= dice;
                     if ((position - dice) < position) {
                         position = position;
                     }
-                    System.out.println("Ladder Is At : " + position);
+                    System.out.println("Snake Is At : " + position);
                     break;
                 default:
                     System.out.println("No Play : " + position);
