@@ -30,11 +30,8 @@ public class SnakeAndLadder {
 
                 case 1:
                     System.out.println("Ladder");
-                    if ((position + dice) > WIN_POSITION) {
-                        position = WIN_POSITION;
-                    } else {
                         position += dice;
-                    }
+
                     break;
                 case 2:
                     System.out.println("Snake");
